@@ -3,11 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/WorkSpace/Android/AndroidStudioProjects/AndroidUseCases/01-Hilt/app/src/main/res/layout/fragment_buttons.xml" value="0.44017563117453345" />
-        <entry key="..\:/WorkSpace/Android/AndroidStudioProjects/MAD-Skill/01-Hilt/app/src/main/res/layout/activity_main.xml" value="0.11197916666666667" />
+        <entry key="..\:/WorkSpace/Android/AndroidStudioProjects/MAD-Skill/02-DataStore/app/src/main/res/layout/activity_main.xml" value="0.4" />
       </map>
     </option>
   </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
