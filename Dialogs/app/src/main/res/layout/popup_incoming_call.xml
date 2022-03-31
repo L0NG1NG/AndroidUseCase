@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <androidx.constraintlayout.helper.widget.Layer
+        android:id="@+id/incoming_layer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:constraint_referenced_ids="incoming_bg,toggle_speaker,speaking_status,parking_channel_name,hangup,hide_call" />
+
+
+    <ImageView
+        android:id="@+id/incoming_bg"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/incoming_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/speaking_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="正在通话..."
+        android:textColor="#A8ADB8"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@id/parking_channel_name"
+        app:layout_constraintStart_toStartOf="@id/incoming_bg"
+        app:layout_constraintTop_toTopOf="@id/incoming_bg"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/parking_channel_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="通道口的名称通道..."
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/incoming_bg"
+        app:layout_constraintStart_toStartOf="@id/incoming_bg"
+        app:layout_constraintTop_toBottomOf="@id/speaking_status" />
+
+    <ImageView
+        android:id="@+id/hangup"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="28dp"
+        android:src="@mipmap/ic_guaduan"
+        app:layout_constraintBottom_toBottomOf="@id/incoming_bg"
+        app:layout_constraintEnd_toStartOf="@id/toggle_speaker"
+        app:layout_constraintTop_toTopOf="@id/incoming_bg" />
+
+    <CheckBox
+        android:id="@+id/toggle_speaker"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="21dp"
+        android:background="@drawable/selector_speaker_bg"
+        android:button="@null"
+        app:layout_constraintBottom_toBottomOf="@id/incoming_bg"
+        app:layout_constraintEnd_toEndOf="@id/incoming_bg"
+        app:layout_constraintTop_toTopOf="@id/incoming_bg" />
+
+    <ImageView
+        android:id="@+id/accept_incoming"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="21dp"
+        android:src="@mipmap/ic_jieting"
+        app:layout_constraintBottom_toBottomOf="@id/incoming_bg"
+        app:layout_constraintEnd_toEndOf="@id/incoming_bg"
+        app:layout_constraintTop_toTopOf="@id/incoming_bg" />
+
+
+    <ImageView
+        android:id="@+id/hide_call"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:src="@mipmap/ic_shouqi"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@id/incoming_bg"
+        app:layout_constraintTop_toTopOf="@id/incoming_bg" />
+
+    <com.longing.dialogs.DragView
+        android:id="@+id/dragView"
+        android:layout_width="40dp"
+        android:clickable="true"
+        android:layout_height="40dp"
+        android:background="@drawable/ic_launcher_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/show_call_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/darker_gray"
+        android:paddingEnd="5dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/call_white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@color/white"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/callingIv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_jietingzhong" />
+
+            <TextView
+                android:id="@+id/callingTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="通话中"
+                android:textColor="#05C162"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
