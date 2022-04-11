@@ -23,6 +23,8 @@ class BrowserActivity : AppCompatActivity() {
             }
         }
         ui.webView.loadUrl("https://cn.bing.com/")
+
+
     }
 
 }
