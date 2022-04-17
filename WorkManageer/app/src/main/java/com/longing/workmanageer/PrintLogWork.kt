@@ -4,8 +4,7 @@ import android.content.Context
 import android.util.Log
 import androidx.work.Worker
 import androidx.work.WorkerParameters
-
-private const val TAG = "PrintLogWork"
+import com.keytop.android.apphelper.log.KtLog
 
 class PrintLogWork(appContext: Context, workerParams: WorkerParameters) :
     Worker(appContext, workerParams) {
@@ -13,16 +12,16 @@ class PrintLogWork(appContext: Context, workerParams: WorkerParameters) :
 
     override fun onStopped() {
         super.onStopped()
-        Log.i(TAG, "onStopped: -->$data")
+        KtLog.i("onStopped: -->$data")
     }
 
     override fun doWork(): Result {
         val url = inputData.getString("IMAGE_URI")
-        Log.i(TAG, "新建一个新的任务$url")
+        KtLog.i("新建一个新的任务$url")
         while (!isStopped) {
             data++
             Thread.sleep(1000)
-            Log.i(TAG, "doWork: -->$data")
+            KtLog.i("doWork: -->$data")
         }
         return Result.success()
     }

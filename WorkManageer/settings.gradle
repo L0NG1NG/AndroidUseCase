@@ -10,6 +10,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { url 'https://dev365.keytop.cn/nexus/repository/kt_android_commons/' }
     }
 }
 rootProject.name = "WorkManageer"
