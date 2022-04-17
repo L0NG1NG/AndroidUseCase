@@ -4,10 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import androidx.datastore.core.DataStore
-import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
-import androidx.datastore.preferences.createDataStore
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collect
@@ -17,12 +14,10 @@ private const val TAG = "MainActivity"
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var dataStore: DataStore<Preferences>
-    private var taskNmae = 1
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        dataStore = application.createDataStore("my_datastore")
         findViewById<Button>(R.id.read_data).setOnClickListener {
             //读数据
             lifecycleScope.launch {
@@ -48,6 +43,7 @@ class MainActivity : AppCompatActivity() {
     private suspend fun updateTask(name: String) {
         dataStore.edit { prefers ->
             prefers[PreferencesKeys.SHOW_COMPLETED] = true
+            prefers[PreferencesKeys.TASK_NAME] = name
 
         }
     }
